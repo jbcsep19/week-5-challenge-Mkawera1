@@ -6,11 +6,33 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/">View All Posts</a><br/>
+<h1>Guest Book</h1>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <span class="navbar-text">
+        <b>Katrina's Birthday</b>
+  </span>
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/add">New Guest</a>
+        </li>
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link" href="/process">View Guest</a>-->
+<!--        </li>-->
+
+    </ul>
+</nav>
 Name :<span th:text="${post.name}"></span><br/>
-Date :<span th:number="${post.date}"></span><br/>
+Date :<span th:text="${post.date}"></span><br/>
 Wishes :<p th:text="${post.wishes}"></p>
-<a th:href="@{/delete/{id}(id=${post.id})}">Delete this post</a>
+<a href="/">View post</a><br/>
+
+<a th:href="@{/add/{id}(id=${post.id})}">Add</a>
+<a th:href="@{/update/{id}(id=${post.id})}">Update</a>
+<!--<a th:href="@{/detail/{id}(id=${post.id})}">Details</a>-->
+<a th:href="@{/delete/{id}(id=${post.id})}">Delete</a>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

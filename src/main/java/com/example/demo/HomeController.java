@@ -15,6 +15,7 @@ import javax.validation.Valid;
 public class HomeController {
     @Autowired
     PostRepository postRepository;
+
     @RequestMapping("/")
     public String listPosts(Model model){
         model.addAttribute("posts", postRepository.findAll());
@@ -35,9 +36,15 @@ public class HomeController {
         return "redirect:/";
     }
     @RequestMapping("/detail/{id}")
-    public String viewPost(@PathVariable("id") long id, Model model)
+    public String showPost(@PathVariable("id") long id, Model model)
     {model.addAttribute("post", postRepository.findById(id).get());
-    return "view";
+    return "show";
+    }
+    @RequestMapping("/add/{id}")
+    public String addPost(@PathVariable("id") long id,
+                          Model model){
+        model.addAttribute("post",postRepository.findById(id).get());
+        return "postform";
     }
     @RequestMapping("/update/{id}")
     public String updatePost(@PathVariable("id") long id,

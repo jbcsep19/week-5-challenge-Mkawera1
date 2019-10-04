@@ -6,21 +6,43 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Post Form</h1>
-<a href="/add">Add a Post</a><br/>
+<h1>Guest Book</h1>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <span class="navbar-text">
+ Katrina's Birthday
+  </span>
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/add">New Guest</a>
+        </li>
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link" href="/process">View Guest</a>-->
+<!--        </li>-->
+
+    </ul>
+</nav>
+
 <form action="#" th:action="@{/process}" th:object="${post}" method="post">
     <input type="hidden" th:field="*{id}" />
     Name :<input type="text" th:field="*{name}" />
     <span th:if="${#fields.hasErrors('name')}"
           th:errors="*{name}"></span><br/>
 
-    Date :<input type="number" th:field="*{date}"/>
+    Date :<input type="text" th:field="*{date}"/>
     <span th:if="${#fields.hasErrors('date')}"
           th:errors="*{date}"></span><br/>
 
     Wishes :<textarea rows="4" th:field="*{wishes}" />
     <span th:if="${#fields.hasErrors('wishes')}"
           th:errors="*{wishes}"></span><br/>
+<!--    <a href="/add"></a><br/>-->
+    <a th:href="@{/add/{id}(id=${post.id})}">Add</a>
+    <a th:href="@{/update/{id}(id=${post.id})}">Update</a>
+<!--    <a th:href="@{/detail/{id}(id=${post.id})}">Details</a>-->
+    <a th:href="@{/delete/{id}(id=${post.id})}">Delete</a>
 
     <input type="submit" value="Submit" />
 </form>
