@@ -18,9 +18,7 @@
         <li class="nav-item">
             <a class="nav-link" href="/add">New Guest</a>
         </li>
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" href="/process">View Guest</a>-->
-<!--        </li>-->
+
 
     </ul>
 </nav>
@@ -38,11 +36,11 @@
         <td th:text="${post.wishes}"></td>
         <td>
 
-<!--            <a href="/add">Add</a><br/>-->
-            <a th:href="@{/add/{id}(id=${post.id})}">Add</a>
-<!--            <a th:href="@{/update/{id}(id=${post.id})}">Update</a>-->
-<!--            <a th:href="@{/detail/{id}(id=${post.id})}">Details</a>-->
-<!--            <a th:href="@{/delete/{id}(id=${post.id})}">Delete</a>-->
+
+
+            <a th:href="@{/update/{id}(id=${post.id})}">Update</a>
+            <a th:href="@{/detail/{id}(id=${post.id})}">Details</a>
+            <a th:href="@{/delete/{id}(id=${post.id})}">Delete</a>
 
 
         </td>

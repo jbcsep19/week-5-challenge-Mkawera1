@@ -27,11 +27,10 @@
 Name :<span th:text="${post.name}"></span><br/>
 Date :<span th:text="${post.date}"></span><br/>
 Wishes :<p th:text="${post.wishes}"></p>
-<a href="/">View post</a><br/>
 
-<a th:href="@{/add/{id}(id=${post.id})}">Add</a>
+
+
 <a th:href="@{/update/{id}(id=${post.id})}">Update</a>
-<!--<a th:href="@{/detail/{id}(id=${post.id})}">Details</a>-->
 <a th:href="@{/delete/{id}(id=${post.id})}">Delete</a>
 
 
