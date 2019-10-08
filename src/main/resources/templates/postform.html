@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Title</title>
+    <link rel="stylesheet" href="/myCSS.css">
 </head>
 <body>
 <style>
     body {
-        background-image: url("");
+        background-image: url("https://res.cloudinary.com/dwnqgtvop/image/upload/v1570540932/Poster-Background-Design-Nature-photo-background-blurred-stock-sunset-palm-tree-silhouette-vector-Poster-Background-Design-Nature-sunset-background-palm-tree-silhouette-stock_cqu3vy.jpg");
         backgroud-repeat: no-repeat;
-        background-size:
+        background-size:2000px;
     }
 </style>
-<h1>Guest Book</h1>
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <span class="navbar-text">
  Katrina's Birthday
@@ -28,29 +29,57 @@
 
 
     </ul>
-</nav>
+</nav><br/>
+
+
+<h3><center>Guest Book</center></h3>
+
 
 <form action="#" th:action="@{/process}" th:object="${post}" method="post">
     <input type="hidden" th:field="*{id}" />
-    Name :<input type="text" th:field="*{name}" />
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+
+        <b>Name  :<input class="form-control" type="text" th:field="*{name}"/></b>
     <span th:if="${#fields.hasErrors('name')}"
           th:errors="*{name}"></span><br/>
+    </div>
 
-    Date :<input type="text" th:field="*{date}"/>
+    <br/>
+
+        <div class="col">
+
+
+
+            <b>Date  :<input class="form-control" type="text" th:field="*{date}"/></b>
     <span th:if="${#fields.hasErrors('date')}"
           th:errors="*{date}"></span><br/>
 
-    Wishes :<textarea rows="4" th:field="*{wishes}" />
+            <input type="submit" value="Submit" />
+    </div>
+    <br/>
+
+        <div class="col">
+
+            <b>Wishes:<textarea class="form-control" rows="1" th:field="*{wishes}" /></b>
     <span th:if="${#fields.hasErrors('wishes')}"
           th:errors="*{wishes}"></span><br/>
-<!--    <a href="/add"></a><br/>-->
 
-    <a th:href="@{/update/{id}(id=${post.id})}">Update</a>
-    <a th:href="@{/detail/{id}(id=${post.id})}">Details</a>
-    <a th:href="@{/delete/{id}(id=${post.id})}">Delete</a>
+<!--    <a th:href="@{/update/{id}(id=${post.id})}">Update</a>-->
+<!--    <a th:href="@{/detail/{id}(id=${post.id})}">Details</a>-->
+<!--    <a th:href="@{/delete/{id}(id=${post.id})}">Delete</a>-->
 
-    <input type="submit" value="Submit" />
+<!--    <input type="submit" value="Submit" />-->
+
+        </div>
+    </div>
+</div>
 </form>
+
+
+
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

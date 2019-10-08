@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Title</title>
+    <link rel="stylesheet" href="/myCSS.css">
 </head>
 <body>
-<h1>Guest Book</h1>
+<style>
+    body {
+        background-image: url("https://res.cloudinary.com/dwnqgtvop/image/upload/v1570540932/Poster-Background-Design-Nature-photo-background-blurred-stock-sunset-palm-tree-silhouette-vector-Poster-Background-Design-Nature-sunset-background-palm-tree-silhouette-stock_cqu3vy.jpg");
+        backgroud-repeat: no-repeat;
+        background-size:2000px;
+    }
+</style>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <span class="navbar-text">
         <b>Katrina's Birthday</b>
@@ -18,12 +25,18 @@
         <li class="nav-item">
             <a class="nav-link" href="/add">New Guest</a>
         </li>
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" href="/process">View Guest</a>-->
-<!--        </li>-->
+
 
     </ul>
 </nav>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col">
+<h3>Guest Book</h3>
 Name :<span th:text="${post.name}"></span><br/>
 Date :<span th:text="${post.date}"></span><br/>
 Wishes :<p th:text="${post.wishes}"></p>
@@ -32,8 +45,12 @@ Wishes :<p th:text="${post.wishes}"></p>
 
 <a th:href="@{/update/{id}(id=${post.id})}">Update</a>
 <a th:href="@{/delete/{id}(id=${post.id})}">Delete</a>
+        </div>
+        <div class="col">
 
-
+        </div>
+    </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

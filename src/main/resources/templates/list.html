@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Title</title>
+    <link rel="stylesheet" href="/myCSS.css">
 </head>
 <body>
-<h1>Guest Book</h1>
+<style>
+    body {
+        background-image: url("https://res.cloudinary.com/dwnqgtvop/image/upload/v1570540932/Poster-Background-Design-Nature-photo-background-blurred-stock-sunset-palm-tree-silhouette-vector-Poster-Background-Design-Nature-sunset-background-palm-tree-silhouette-stock_cqu3vy.jpg");
+        backgroud-repeat: no-repeat;
+        background-size:2000px;
+    }
+</style>
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <span class="navbar-text">
  Katrina's Birthday
@@ -22,20 +30,40 @@
 
     </ul>
 </nav>
+<br/>
 
-<table class="table table-bordered">
+
+<h3><center>Guest Book</center></h3>
+            <div class="container">
+                <div class="row">
+<table class="table">
+
+    <div class="col">
+
+    </div>
+    <div class="col">
+
     <tr>
+
+
+
         <th>Name</th>
         <th>Date</th>
         <th>Wishes</th>
         <th>Actions</th>
+
     </tr>
+    </div>
+
+
     <tr th:each="post : ${posts}">
+
         <td th:text="${post.name}"></td>
         <td th:text="${post.date}"></td>
         <td th:text="${post.wishes}"></td>
-        <td>
 
+
+        <td>
 
 
             <a th:href="@{/update/{id}(id=${post.id})}">Update</a>
@@ -43,9 +71,21 @@
             <a th:href="@{/delete/{id}(id=${post.id})}">Delete</a>
 
 
+
         </td>
+
     </tr>
+
+    <div class="col">
+
+    </div>
+
+
+
 </table>
+            </div>
+            </div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
